@@ -3,38 +3,35 @@ const products = [
     _id: '1',
     name: 'Ash Rug',
     image: '/images/s-l1600.jpg',
-    description:
-      'Ash coloured soft rug for comfort',
+    description: 'Ash coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
     countInStock: 10,
-    rating: 4.5,
+    rating: 5,
     numReviews: 12,
   },
   {
     _id: '2',
     name: 'Tan Rug',
     image: '/images/s-l1600(1).jpg',
-    description:
-      'Tan coloured soft rug for comfort',
+    description: 'Tan coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 99.99,
     countInStock: 10,
-    rating: 4.5,
+    rating: 4,
     numReviews: 12,
   },
   {
     _id: '3',
     name: 'Black Rug',
     image: '/images/s-l1600(2).jpg',
-    description:
-      'Black coloured soft rug for comfort',
+    description: 'Black coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 109.99,
-    countInStock: 10,
+    countInStock: 0,
     rating: 4.5,
     numReviews: 12,
   },
@@ -42,8 +39,7 @@ const products = [
     _id: '4',
     name: 'Brown Rug',
     image: '/images/s-l1600(3).jpg',
-    description:
-      'Brown coloured soft rug for comfort',
+    description: 'Brown coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 84.99,
@@ -55,8 +51,7 @@ const products = [
     _id: '5',
     name: 'Light Brown Rug',
     image: '/images/s-l1600(4).jpg',
-    description:
-      'Light Brown coloured soft rug for comfort',
+    description: 'Light Brown coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 119.99,
@@ -68,8 +63,7 @@ const products = [
     _id: '6',
     name: 'Light Tan Rug',
     image: '/images/s-l1600(5).jpg',
-    description:
-      'Light Tan coloured soft rug for comfort',
+    description: 'Light Tan coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -81,8 +75,7 @@ const products = [
     _id: '7',
     name: 'Green Rug',
     image: '/images/s-l1600(6).jpg',
-    description:
-      'Green coloured soft rug for comfort',
+    description: 'Green coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -94,8 +87,7 @@ const products = [
     _id: '8',
     name: 'Orange Rug',
     image: '/images/s-l1600(7).jpg',
-    description:
-      'Orange coloured soft rug for comfort',
+    description: 'Orange coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -107,8 +99,7 @@ const products = [
     _id: '9',
     name: 'Pink Rug',
     image: '/images/s-l1600(8).jpg',
-    description:
-      'Pink coloured soft rug for comfort',
+    description: 'Pink coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -120,8 +111,7 @@ const products = [
     _id: '10',
     name: 'Violet Rug',
     image: '/images/s-l1600(9).jpg',
-    description:
-      'Violet coloured soft rug for comfort',
+    description: 'Violet coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -133,8 +123,7 @@ const products = [
     _id: '11',
     name: 'Pink Rug',
     image: '/images/s-l1600(10).jpg',
-    description:
-      'Pink coloured soft rug for comfort',
+    description: 'Pink coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -146,8 +135,7 @@ const products = [
     _id: '12',
     name: 'Blue Rug',
     image: '/images/s-l1600(11).jpg',
-    description:
-      'Blue coloured soft rug for comfort',
+    description: 'Blue coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
@@ -159,16 +147,14 @@ const products = [
     _id: '13',
     name: 'Grey Rug',
     image: '/images/s-l1600(12).jpg',
-    description:
-      'Grey coloured soft rug for comfort',
+    description: 'Grey coloured soft rug for comfort',
     brand: 'KSM',
     category: 'Rug',
     price: 89.99,
     countInStock: 10,
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 12,
   },
-
 ]
 
 export default products

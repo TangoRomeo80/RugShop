@@ -1,48 +1,81 @@
 import React from 'react'
+import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 
 const Header = () => {
   return (
     <header>
       {/* upper navbar */}
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <Navbar.Brand href="#">
-            <img alt="logo" src="/images/Main-Logo.png" height="60px"/>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="/cart"><i className="fas fa-shopping-cart"></i>
-                Cart
-              </Nav.Link>
-              <Nav.Link href="/login"><i className="fas fa-user"></i>
-                Sign In
-              </Nav.Link>
+          <LinkContainer to='/'>
+            <Navbar.Brand href='#'>
+              <img alt='logo' src='/images/Main-Logo.png' height='60px' />
+            </Navbar.Brand>
+          </LinkContainer>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='ms-auto'>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i>
+                  Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <i className='fas fa-user'></i>
+                  Sign In
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       {/* section selection bar */}
-      <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           {/* <Navbar.Brand href="/">RugShop</Navbar.Brand> */}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto me-auto">
-              <Nav.Link href="/rug">|Rug|</Nav.Link>
-              <Nav.Link href="/bedding">|Bedding|</Nav.Link>
-              <Nav.Link href="/curtain">|Curtain|</Nav.Link>
-              <Nav.Link href="/cushion">|Cushion|</Nav.Link>
-              <Nav.Link href="/quilt">|Quilt and Pillow|</Nav.Link>
-              <Nav.Link href="/blanket">|Blankets|</Nav.Link>
-              <Nav.Link href="/tableMat">|Table Mat|</Nav.Link>
-              <Nav.Link href="/sofa">|Sofa Cover|</Nav.Link>
-              <Nav.Link href="/mink">|Mink Throws|</Nav.Link>
-              <Nav.Link href="/mattress">|Mattress Protector|</Nav.Link>
-              <Nav.Link href="/towel">|Towels|</Nav.Link>
-              <Nav.Link href="/bathroom">|Bathroom Sets|</Nav.Link>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='ms-auto me-auto'>
+              <LinkContainer to='/rug'>
+                <Nav.Link>|Rug|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/bedding'>
+                <Nav.Link>|Bedding|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/curtain'>
+                <Nav.Link>|Curtain|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/cushion'>
+                <Nav.Link>|Cushion|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/quilt'>
+                <Nav.Link>|Quilt and Pillow|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/blanket'>
+                <Nav.Link>|Blankets|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/tablemat'>
+                <Nav.Link>|Table Mat|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/sofa'>
+                <Nav.Link>|Sofa Cover|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/mink'>
+                <Nav.Link>|Mink Throws|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/mattress'>
+                <Nav.Link>|Mattress Protector|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/towel'>
+                <Nav.Link>|Towels|</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/bathroom'>
+                <Nav.Link>|Bathroom Sets|</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
