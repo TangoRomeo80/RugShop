@@ -17,7 +17,7 @@ const products = [
     image: '/images/s-l1600(1).jpg',
     description: 'Tan coloured soft rug for comfort',
     brand: 'KSM',
-    category: 'Rug',
+    category: 'Bedding',
     price: 99.99,
     countInStock: 10,
     rating: 4,
@@ -157,4 +157,4 @@ const products = [
   },
 ]
 
-export default products
+module.exports = products
