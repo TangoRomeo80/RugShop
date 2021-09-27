@@ -8,7 +8,9 @@ const CategoryScreen = ({ match }) => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get(`/api/category/${match.params.cat}`)
+      const { data } = await axios.get(
+        `/api/products/category/${match.params.cat}`
+      )
 
       setProducts(data)
     }
