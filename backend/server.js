@@ -16,6 +16,9 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product)
 })
 
-
+app.get('/api/category/:cat', (req, res) => {
+  const filtered = products.filter((p) => p.category === req.params.cat)
+  res.json(filtered)
+})
 
 app.listen(5000, console.log('Server running in port 5000'))

@@ -40,40 +40,40 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto me-auto'>
-              <LinkContainer to='/rug'>
+              <LinkContainer to='/category/rug'>
                 <Nav.Link>|Rug|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/bedding'>
+              <LinkContainer to='/category/bedding'>
                 <Nav.Link>|Bedding|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/curtain'>
+              <LinkContainer to='/category/curtain'>
                 <Nav.Link>|Curtain|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/cushion'>
+              <LinkContainer to='/category/cushion'>
                 <Nav.Link>|Cushion|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/quilt'>
+              <LinkContainer to='/category/quilt'>
                 <Nav.Link>|Quilt and Pillow|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/blanket'>
+              <LinkContainer to='/category/blanket'>
                 <Nav.Link>|Blankets|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/tablemat'>
+              <LinkContainer to='/category/tablemat'>
                 <Nav.Link>|Table Mat|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/sofa'>
+              <LinkContainer to='/category/sofa'>
                 <Nav.Link>|Sofa Cover|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/mink'>
+              <LinkContainer to='/category/mink'>
                 <Nav.Link>|Mink Throws|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/mattress'>
+              <LinkContainer to='/category/mattress'>
                 <Nav.Link>|Mattress Protector|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/towel'>
+              <LinkContainer to='/category/towel'>
                 <Nav.Link>|Towels|</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/bathroom'>
+              <LinkContainer to='/category/bathroom'>
                 <Nav.Link>|Bathroom Sets|</Nav.Link>
               </LinkContainer>
             </Nav>
