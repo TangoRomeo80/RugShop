@@ -19,7 +19,31 @@ const CategoryScreen = ({ match }) => {
   return (
     <div>
       <>
-        <h1>Curtains and Curtain Poles</h1>
+        <h1>
+          {match.params.cat === 'rug'
+            ? 'Rugs'
+            : match.params.cat === 'bedding'
+            ? 'Bedding Items'
+            : match.params.cat === 'curtain'
+            ? 'Curtain and Curtain Poles'
+            : match.params.cat === 'cushion'
+            ? 'Cushion Cover and Pads'
+            : match.params.cat === 'quilt'
+            ? 'Duvet and Pillows'
+            : match.params.cat === 'blanket'
+            ? 'Blankets'
+            : match.params.cat === 'tablemat'
+            ? 'Table Mats'
+            : match.params.cat === 'sofa'
+            ? 'Sofa Cover and Throws'
+            : match.params.cat === 'mink'
+            ? 'Mink Throws and Fleece'
+            : match.params.cat === 'mattress'
+            ? 'Mattress protector and Toppers'
+            : match.params.cat === 'towel'
+            ? 'Towels'
+            : 'Bathroom Set'}
+        </h1>
         <Row>
           {products.map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

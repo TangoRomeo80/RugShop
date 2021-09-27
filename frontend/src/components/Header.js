@@ -53,7 +53,7 @@ const Header = () => {
                 <Nav.Link>|Cushion|</Nav.Link>
               </LinkContainer>
               <LinkContainer to='/category/quilt'>
-                <Nav.Link>|Quilt and Pillow|</Nav.Link>
+                <Nav.Link>|Duvet and Pillow|</Nav.Link>
               </LinkContainer>
               <LinkContainer to='/category/blanket'>
                 <Nav.Link>|Blankets|</Nav.Link>
