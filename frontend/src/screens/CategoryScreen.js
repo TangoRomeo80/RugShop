@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import axios from 'axios'
@@ -21,6 +22,9 @@ const CategoryScreen = ({ match }) => {
   return (
     <div>
       <>
+        <Link className='btn btn-dark my-3' to='/'>
+          Go Back
+        </Link>
         <h1>
           {match.params.cat === 'rug'
             ? 'Rugs'

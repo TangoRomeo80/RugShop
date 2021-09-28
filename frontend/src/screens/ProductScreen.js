@@ -24,7 +24,22 @@ const ProductScreen = ({ match }) => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={product.images[0]} alt={product.name} fluid />
+          <Card className='my-3 p-3 rounded'>
+            <Card.Img src={product.image1} variant='top' />
+            <Card.Body>
+              <Row>
+                <Col md={4}>
+                  <Card.Img src={product.image2} variant='top' />
+                </Col>
+                <Col md={4}>
+                  <Card.Img src={product.image3} variant='top' />
+                </Col>
+                <Col md={4}>
+                  <Card.Img src={product.image4} variant='top' />
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>
