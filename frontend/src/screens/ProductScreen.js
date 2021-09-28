@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import axios from 'axios'
 
 const ProductScreen = ({ match }) => {
   const [product, setProduct] = useState({})
+  const [img1Src, setImg1Src] = useState('')
+  const [img2Src, setImg2Src] = useState('')
+  const [img3Src, setImg3Src] = useState('')
+  const [img4Src, setImg4Src] = useState('')
 
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await axios.get(`/api/products/${match.params.id}`)
-
       setProduct(data)
+      setImg1Src(data.image1)
+      setImg2Src(data.image2)
+      setImg3Src(data.image3)
+      setImg4Src(data.image4)
     }
 
     fetchProduct()
@@ -25,17 +32,38 @@ const ProductScreen = ({ match }) => {
       <Row>
         <Col md={6}>
           <Card className='my-3 p-3 rounded'>
-            <Card.Img src={product.image1} variant='top' />
+            <Card.Img src={img1Src} variant='top' />
             <Card.Body>
               <Row>
                 <Col md={4}>
-                  <Card.Img src={product.image2} variant='top' />
+                  <Card.Img
+                    src={img2Src}
+                    variant='top'
+                    onClick={(e) => {
+                      setImg1Src(img2Src)
+                      setImg2Src(img1Src)
+                    }}
+                  />
                 </Col>
                 <Col md={4}>
-                  <Card.Img src={product.image3} variant='top' />
+                  <Card.Img
+                    src={img3Src}
+                    variant='top'
+                    onClick={(e) => {
+                      setImg1Src(img3Src)
+                      setImg2Src(img1Src)
+                    }}
+                  />
                 </Col>
                 <Col md={4}>
-                  <Card.Img src={product.image4} variant='top' />
+                  <Card.Img
+                    src={img4Src}
+                    variant='top'
+                    onClick={(e) => {
+                      setImg1Src(img4Src)
+                      setImg2Src(img1Src)
+                    }}
+                  />
                 </Col>
               </Row>
             </Card.Body>
