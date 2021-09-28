@@ -1,20 +1,52 @@
 import express from 'express'
+import asyncHandler from 'express-async-handler'
 const router = express.Router()
-import Product from '../models/productModel'
+import Product from '../models/productModel.js'
 
-router.get('/', async(req, res) => {
-  const products = await Product.find({})
-  res.json(products)
-})
+// @desc Fetch all products
+// @route GET /api/products
+//@access public
+router.get(
+  '/',
+  asyncHandler(async (req, res) => {
+    const products = await Product.find({})
+    res.json(products)
+  })
+)
 
-router.get('/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id)
-  res.json(product)
-})
+// @desc Fetch single product by ID
+// @route GET /api/products/:id
+//@access public
+router.get(
+  '/:id',
+  asyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id)
+    if (product) {
+      res.json(product)
+    } else {
+      res.status(404)
+      throw new Error('Product not found')
+    }
+  })
+)
 
-router.get('/category/:cat', (req, res) => {
-  const filtered = products.filter((p) => p.category === req.params.cat)
-  res.json(filtered)
-})
+// @desc Fetch products by category
+// @route GET /api/products/category/:cat
+//@access public
+router.get(
+  '/category/:cat',
+  asyncHandler(async (req, res) => {
+    //const filtered = products.filter((p) => p.category === req.params.cat)
+    const filtered = await Product.find({})
+      .where('category')
+      .equals(req.params.cat)
+    if (filtered.length != 0) {
+      res.json(filtered)
+    } else {
+      res.status(404)
+      throw new Error('Product not found')
+    }
+  })
+)
 
 export default router
