@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
-import axios from 'axios'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { listProductCategory } from '../actions/productActions'
 
 const CategoryScreen = ({ match }) => {
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch()
+
+  const productList = useSelector((state) => state.productList)
+  const { loading, error, products } = productList
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get(
-        `/api/products/category/${match.params.cat}`
-      )
-
-      setProducts(data)
+    const fetchProduct = async () => {
+      dispatch(listProductCategory(match.params.cat))
     }
-
-    fetchProducts()
-  }, [match.params.cat])
+    fetchProduct()
+  }, [dispatch, match])
 
   return (
     <div>
@@ -50,13 +51,19 @@ const CategoryScreen = ({ match }) => {
             ? 'Towels'
             : 'Bathroom Set'}
         </h1>
-        <Row>
-          {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant='danger'>{error}</Message>
+        ) : (
+          <Row>
+            {products.map((product) => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+        )}
       </>
     </div>
   )
