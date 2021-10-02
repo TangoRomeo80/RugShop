@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap'
-import Rating from '../components/Rating'
+import { Row, Col, ListGroup, Card, /*Button*/ } from 'react-bootstrap'
+//import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listProductDetails } from '../actions/productActions'
@@ -85,16 +85,17 @@ const ProductScreen = ({ match }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Col md={3}>
+          <Col md={6}>
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h3>{product.name}</h3>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Rating
+                {/* <Rating
                   value={product.rating}
                   text={`${product.numReviews} reviews`}
-                />
+                /> */}
+                In stock: {product.countInStock}
               </ListGroup.Item>
               <ListGroup.Item>Price: £{product.price}</ListGroup.Item>
               <ListGroup.Item>
@@ -102,7 +103,7 @@ const ProductScreen = ({ match }) => {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
@@ -132,7 +133,7 @@ const ProductScreen = ({ match }) => {
                 </ListGroup.Item>
               </ListGroup>
             </Card>
-          </Col>
+          </Col> */}
         </Row>
       )}
     </>
