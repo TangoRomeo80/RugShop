@@ -51,10 +51,122 @@ const CategoryScreen = ({ match }) => {
             ? 'Towels'
             : 'Bathroom Set'}
         </h1>
+
         {loading ? (
           <Loader />
         ) : error ? (
           <Message variant='danger'>{error}</Message>
+        ) : match.params.cat === 'bedding' ? (
+          <>
+            <h2>Complete set</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'complete' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>Duvet set/Half set</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'duvet' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>Sheet set</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'sheet' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>Fitted sheet</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'fitted' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>Flat sheet</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'flat' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>Valance sheet</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === 'valance' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>1 piece bedspread</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === '1pc' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>3 piece bedspread</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === '3pc' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+            <h2>7 piece comforter</h2>
+            <Row>
+              {products.map((product) =>
+                product.category2 === '7pc' ? (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  <></>
+                )
+              )}
+            </Row>
+          </>
         ) : (
           <Row>
             {products.map((product) => (
