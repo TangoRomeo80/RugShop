@@ -51,14 +51,14 @@ const CategoryScreen = ({ match }) => {
             ? 'Towels'
             : 'Bathroom Set'}
         </h1>
-
+        <hr></hr>
         {loading ? (
           <Loader />
         ) : error ? (
           <Message variant='danger'>{error}</Message>
         ) : match.params.cat === 'bedding' ? (
           <>
-            <h2>Complete set</h2>
+            <h2 className='text-center'>Complete set</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'complete' ? (
@@ -70,7 +70,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>Duvet set/Half set</h2>
+            <h2 className='text-center'>Duvet set/Half set</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'duvet' ? (
@@ -82,7 +82,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>Sheet set</h2>
+            <h2 className='text-center'>Sheet set</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'sheet' ? (
@@ -94,7 +94,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>Fitted sheet</h2>
+            <h2 className='text-center'>Fitted sheet</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'fitted' ? (
@@ -106,7 +106,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>Flat sheet</h2>
+            <h2 className='text-center'>Flat sheet</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'flat' ? (
@@ -118,7 +118,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>Valance sheet</h2>
+            <h2 className='text-center'>Valance sheet</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === 'valance' ? (
@@ -130,7 +130,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>1 piece bedspread</h2>
+            <h2 className='text-center'>1 piece bedspread</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === '1pc' ? (
@@ -142,7 +142,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>3 piece bedspread</h2>
+            <h2 className='text-center'>3 piece bedspread</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === '3pc' ? (
@@ -154,7 +154,7 @@ const CategoryScreen = ({ match }) => {
                 )
               )}
             </Row>
-            <h2>7 piece comforter</h2>
+            <h2 className='text-center'>7 piece comforter</h2>
             <Row>
               {products.map((product) =>
                 product.category2 === '7pc' ? (
