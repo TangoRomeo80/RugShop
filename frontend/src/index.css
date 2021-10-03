@@ -16,6 +16,10 @@ h2 {
   padding: 0.5rem 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .rating span {
   margin: 0.1rem;
 }
@@ -46,6 +50,13 @@ h2 {
 }
 .carousel a {
   margin: 0 auto;
+}
+.contact-footer {
+  color: #fff;
+}
+
+.contact-footer h4 {
+  padding-left: 25px;
 }
 @media (max-width: 900px) {
   .carousel-caption h2 {
