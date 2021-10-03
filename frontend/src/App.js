@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import CookieConsent from 'react-cookie-consent'
+import CookieConfirm from './components/CookieConfirm'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
@@ -34,18 +34,7 @@ const App = () => {
         </Container>
       </main>
       <Footer />
-      <CookieConsent
-        location='bottom'
-        buttonText='Close'
-        cookieName='<cookieName>'
-        style={{ background: '#2B373B' }}
-        buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
-        expires={150}
-      >
-        This website uses cookies to ensure proper functionalities of the
-        website and enhance the user experience.
-        <span style={{ fontSize: '10px' }}></span>
-      </CookieConsent>
+      <CookieConfirm />
     </Router>
   )
 }
