@@ -20,6 +20,7 @@ const Footer = () => {
                 United Kingdom
               </li>
             </ul>
+            <h6>Copyright &copy; ProShop</h6>
           </Col>
         </Row>
       </Container>
