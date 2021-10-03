@@ -10,7 +10,7 @@ import { listProductCategory } from '../actions/productActions'
 const CategoryScreen = ({ match }) => {
   const dispatch = useDispatch()
 
-  const productList = useSelector((state) => state.productList)
+  const productList = useSelector((state) => state.productCategory)
   const { loading, error, products } = productList
 
   useEffect(() => {
