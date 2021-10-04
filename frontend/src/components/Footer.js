@@ -17,10 +17,10 @@ const Footer = () => {
               </li>
               <li>
                 <i class='fa fa-flag'></i>Unit: 3 and 4, Eastham Market,
-                Pilsgrims way, London, United Kingdom
+                Pilsgrims way, London, E61HJ, United Kingdom
               </li>
             </ul>
-            <h6>Copyright &copy; MS Bedding and Rugs</h6>
+            <h6>Copyright &copy; TM Bedding and Rugs</h6>
           </Col>
         </Row>
       </Container>
