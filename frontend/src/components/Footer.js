@@ -16,11 +16,11 @@ const Footer = () => {
                 <i className='fa fa-envelope-o'></i>abdulhay2014@hotmail.com
               </li>
               <li>
-                <i class='fa fa-flag'></i>Unit: 3 and 4, Eastham Market, Pilsgrims way, London,
-                United Kingdom
+                <i class='fa fa-flag'></i>Unit: 3 and 4, Eastham Market,
+                Pilsgrims way, London, United Kingdom
               </li>
             </ul>
-            <h6>Copyright &copy; ProShop</h6>
+            <h6>Copyright &copy; MS Bedding and Rugs</h6>
           </Col>
         </Row>
       </Container>
