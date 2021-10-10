@@ -8,6 +8,9 @@ import {
   PRODUCT_CATEGORY_REQUEST,
   PRODUCT_CATEGORY_SUCCESS,
   PRODUCT_CATEGORY_FAIL,
+  PRODUCT_SUBCATEGORY_REQUEST,
+  PRODUCT_SUBCATEGORY_SUCCESS,
+  PRODUCT_SUBCATEGORY_FAIL,
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
@@ -49,6 +52,19 @@ export const productCategoryReducer = (state = { products: [] }, action) => {
     case PRODUCT_CATEGORY_SUCCESS:
       return { loading: false, products: action.payload }
     case PRODUCT_CATEGORY_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+export const productSubCategoryReducer = (state = { products: [] }, action) => {
+  switch (action.type) {
+    case PRODUCT_SUBCATEGORY_REQUEST:
+      return { loading: true, products: [] }
+    case PRODUCT_SUBCATEGORY_SUCCESS:
+      return { loading: false, products: action.payload }
+    case PRODUCT_SUBCATEGORY_FAIL:
       return { loading: false, error: action.payload }
     default:
       return state

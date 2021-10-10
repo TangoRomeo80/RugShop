@@ -354,6 +354,9 @@ const ProductEditScreen = ({ match, history }) => {
                 <option value='1pc'>1 piece bedspread</option>
                 <option value='3pc'>3 piece bedspread</option>
                 <option value='7pc'>7 piece comforter</option>
+                <option value='3d'>3D Style</option>
+                <option value='pona'>Pona</option>
+                <option value='nova'>Nova</option>
               </Form.Control>
             </Form.Group>
 

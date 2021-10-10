@@ -28,7 +28,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-          <Route render={({ history }) => <SearchBox history={history} />} />
+            <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ms-auto'>
               {/* <LinkContainer to='/cart'>
                 <Nav.Link>
@@ -77,12 +77,52 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto me-auto'>
-              <LinkContainer to='/category/rug'>
-                <Nav.Link>|Rug|</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to='/category/bedding'>
-                <Nav.Link>|Bedding|</Nav.Link>
-              </LinkContainer>
+              <NavDropdown title='|Rugs|'>
+                <LinkContainer to='/category/rug/none'>
+                  <NavDropdown.Item>General</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/rug/3d'>
+                  <NavDropdown.Item>3D Style</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/rug/pona'>
+                  <NavDropdown.Item>Pona</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/rug/nova'>
+                  <NavDropdown.Item>Nova</NavDropdown.Item>
+                </LinkContainer>
+              </NavDropdown>
+              <NavDropdown title='|Bedding|'>
+                <LinkContainer to='/category/bedding/none'>
+                  <NavDropdown.Item>General</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/complete'>
+                  <NavDropdown.Item>Complete set</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/duvet'>
+                  <NavDropdown.Item>Duvet set/Half set</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/sheet'>
+                  <NavDropdown.Item>Sheet set</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/flat'>
+                  <NavDropdown.Item>Flat sheet</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/fitted'>
+                  <NavDropdown.Item>Fitted set</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/valance'>
+                  <NavDropdown.Item>Valance sheet</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/1pc'>
+                  <NavDropdown.Item>1 piece bedspread</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/3pc'>
+                  <NavDropdown.Item>3 piece bedspread</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to='/category/bedding/7pc'>
+                  <NavDropdown.Item>7 piece comforter</NavDropdown.Item>
+                </LinkContainer>
+              </NavDropdown>
               <LinkContainer to='/category/curtain'>
                 <Nav.Link>|Curtain|</Nav.Link>
               </LinkContainer>

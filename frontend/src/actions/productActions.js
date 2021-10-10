@@ -9,6 +9,9 @@ import {
   PRODUCT_CATEGORY_REQUEST,
   PRODUCT_CATEGORY_SUCCESS,
   PRODUCT_CATEGORY_FAIL,
+  PRODUCT_SUBCATEGORY_REQUEST,
+  PRODUCT_SUBCATEGORY_SUCCESS,
+  PRODUCT_SUBCATEGORY_FAIL,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_FAIL,
@@ -62,6 +65,27 @@ export const listProductCategory = (cat) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_CATEGORY_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
+
+export const listProductSubCategory = (cat, subCat) => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_SUBCATEGORY_REQUEST })
+
+    const { data } = await axios.get(`/api/products/category/${cat}/${subCat}`)
+
+    dispatch({
+      type: PRODUCT_SUBCATEGORY_SUCCESS,
+      payload: data,
+    })
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_SUBCATEGORY_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

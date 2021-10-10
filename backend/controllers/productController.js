@@ -21,6 +21,7 @@ const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({ ...keyword })
     .limit(pageSize)
     .skip(pageSize * (page - 1))
+    .sort({ createdAt: -1 })
 
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
@@ -29,7 +30,7 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route   GET /api/products/:id
 // @access  Public
 const getProductById = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id)
+  const product = await Product.findById(req.params.id).sort({ createdAt: -1 })
   if (product) {
     res.json(product)
   } else {
@@ -43,9 +44,26 @@ const getProductById = asyncHandler(async (req, res) => {
 //@access public
 const getProductsByCat = asyncHandler(async (req, res) => {
   //const filtered = products.filter((p) => p.category === req.params.cat)
-  const filtered = await Product.find({})
-    .where('category')
-    .equals(req.params.cat)
+  const filtered = await Product.find({
+    category: req.params.cat,
+  }).sort({ createdAt: -1 })
+  if (filtered.length != 0) {
+    res.json(filtered)
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+})
+
+// @desc Fetch products by category
+// @route GET /api/products/category/:cat/:subCat
+//@access public
+const getProductsBySubCat = asyncHandler(async (req, res) => {
+  //const filtered = products.filter((p) => p.category === req.params.cat)
+  const filtered = await Product.find({
+    category: req.params.cat,
+    category2: req.params.subCat,
+  }).sort({ createdAt: -1 })
   if (filtered.length != 0) {
     res.json(filtered)
   } else {
@@ -138,7 +156,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @route   GET /api/products/top
 // @access  Public
 const getTopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({}).sort({ countInStock: -1 }).limit(3)
+  const products = await Product.find({}).sort({ createdAt: -1 }).limit(10)
 
   res.json(products)
 })
@@ -151,4 +169,5 @@ export {
   createProduct,
   updateProduct,
   getTopProducts,
+  getProductsBySubCat,
 }
