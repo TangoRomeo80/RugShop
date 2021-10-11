@@ -47,11 +47,18 @@ const HomeScreen = ({ match }) => {
               </Col>
             ))}
           </Row>
-          <Paginate
+          {keyword ? (
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ''}
+            />
+          ) : null}
+          {/* <Paginate
             pages={pages}
             page={page}
             keyword={keyword ? keyword : ''}
-          />
+          /> */}
         </>
       )}
     </>
