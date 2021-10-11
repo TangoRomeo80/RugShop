@@ -19,6 +19,8 @@ const ProductEditScreen = ({ match, history }) => {
   const [image3, setImage3] = useState('')
   const [image4, setImage4] = useState('')
   const [brand, setBrand] = useState('')
+  const [size, setSize] = useState('')
+  const [color, setColor] = useState('')
   const [category, setCategory] = useState('')
   const [category2, setCategory2] = useState('')
   const [countInStock, setCountInStock] = useState(0)
@@ -52,6 +54,8 @@ const ProductEditScreen = ({ match, history }) => {
         setImage3(product.image3)
         setImage4(product.image4)
         setBrand(product.brand)
+        setSize(product.size)
+        setColor(product.color)
         setCategory(product.category)
         setCategory2(product.category2)
         setCountInStock(product.countInStock)
@@ -164,6 +168,8 @@ const ProductEditScreen = ({ match, history }) => {
         image3,
         image4,
         brand,
+        size,
+        color,
         category,
         category2,
         description,
@@ -293,6 +299,28 @@ const ProductEditScreen = ({ match, history }) => {
                 placeholder='Enter brand'
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='size'>
+              <Form.Label>Size</Form.Label>
+              <Form.Control
+                className='mb-3'
+                type='text'
+                placeholder='Enter size'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='color'>
+              <Form.Label>Color</Form.Label>
+              <Form.Control
+                className='mb-3'
+                type='text'
+                placeholder='Enter size'
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

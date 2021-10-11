@@ -23,6 +23,12 @@ const Product = ({ product }) => {
             /> */}
             In stock: {product.countInStock}
           </Card.Text>
+          <Card.Text as='div'>
+            Size: {product.size}
+          </Card.Text>
+          <Card.Text as='div'>
+            Color: {product.color}
+          </Card.Text>
           <Card.Text as='h3'>£{product.price}</Card.Text>
         </Card.Body>
       </Card>

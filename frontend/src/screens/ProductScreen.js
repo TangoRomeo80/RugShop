@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, ListGroup, Card, /*Button*/ } from 'react-bootstrap'
+import { Row, Col, ListGroup, Card /*Button*/ } from 'react-bootstrap'
 //import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -97,6 +97,8 @@ const ProductScreen = ({ match }) => {
                 /> */}
                 In stock: {product.countInStock}
               </ListGroup.Item>
+              <ListGroup.Item>Size: {product.size}</ListGroup.Item>
+              <ListGroup.Item>Color: {product.color}</ListGroup.Item>
               <ListGroup.Item>Price: £{product.price}</ListGroup.Item>
               <ListGroup.Item>
                 Description: {product.description}
