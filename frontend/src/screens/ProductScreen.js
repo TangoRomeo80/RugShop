@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, ListGroup, Card /*Button*/ } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { Row, Col, ListGroup, Card, Button } from 'react-bootstrap'
 //import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -9,6 +10,9 @@ import { listProductDetails } from '../actions/productActions'
 
 const ProductScreen = ({ match }) => {
   const dispatch = useDispatch()
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
 
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
@@ -102,6 +106,15 @@ const ProductScreen = ({ match }) => {
               <ListGroup.Item>Price: £{product.price}</ListGroup.Item>
               <ListGroup.Item>
                 Description: {product.description}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {userInfo && userInfo.isAdmin && (
+                  <LinkContainer to={`/admin/product/${product._id}/edit`}>
+                    <Button variant='light' className='btn-sm'>
+                      <i className='fas fa-edit'></i>Edit
+                    </Button>
+                  </LinkContainer>
+                )}
               </ListGroup.Item>
             </ListGroup>
           </Col>
