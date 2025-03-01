@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
-    "client": "npm start --prefix frontend",
+    "client": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.13"
   }
 }
